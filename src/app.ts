@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import logger from "morgan";
 
-import { router } from "./routes";
+import { admRouter } from "./routes/adm.router";
 
 // * Cria o app
 export const app: express.Express = express();
@@ -13,4 +13,4 @@ app.use(cors());
 app.use(logger("dev"));
 
 // * Integra o endpoint na aplicação
-app.use("/", router);
+app.use("/adm", admRouter);
