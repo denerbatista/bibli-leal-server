@@ -1,8 +1,8 @@
-import AdmsModel from "../models/adms.model";
+import AdmsModel from "../adm/adm.model";
 import bcryptjs from "bcryptjs";
-import { NewAdmDto } from "../dto/adms.dto/newAdm.dto";
-import { UpdateAdmDto } from "../dto/adms.dto/updateAdm.dto";
-import { Adm } from "../entities/adms.entities/adms.entity";
+import { NewAdmDto } from "../adm/dto/new-Adm.dto";
+import { UpdateAdmDto } from "../adm/dto/update-Adm.dto";
+import { Adm } from "../adm/entities/adm.entity";
 
 class AdmServices {
   async getAll(): Promise<Adm[] | null> {

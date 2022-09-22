@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import logger from "morgan";
 
-import { admRouter } from "./routes/adm.router";
+import { admRouter } from "./adm/adm.router";
 
 // * Cria o app
 export const app: express.Express = express();

@@ -1,8 +1,8 @@
-import AdmServices from "../services/adm.service";
-import { UpdateAdmDto } from "../dto/adms.dto/updateAdm.dto";
-import { NewAdmDto } from "../dto/adms.dto/newAdm.dto";
+import AdmServices from "../adm/adm.service";
+import { UpdateAdmDto } from "../adm/dto/update-Adm.dto";
+import { NewAdmDto } from "../adm/dto/new-Adm.dto";
 import { Request, Response } from "express";
-import { Adm } from "../entities/adms.entities/adms.entity";
+import { Adm } from "./entities/adm.entity";
 
 const admServices = new AdmServices();
 
