@@ -31,17 +31,17 @@ class AdmServices {
 
   async updateAdm(
     _id: string,
-    UpdateAdmDto: UpdateAdmDto
+    UpdateAdm: UpdateAdmDto
   ): Promise<Adm | unknown> {
-    if (UpdateAdmDto._password) {
+    if (UpdateAdm._password) {
       const encrypted: string = await bcryptjs.hash(
-        UpdateAdmDto._password as string,
+        UpdateAdm._password as string,
         10
       );
-      UpdateAdmDto._password = encrypted;
+      UpdateAdm._password = encrypted;
     }
     try {
-      await AdmsModel.updateOne({ _id: _id }, UpdateAdmDto);
+      await AdmsModel.updateOne({ _id: _id }, UpdateAdm);
       const admEdited: Adm | null = await AdmsModel.findById(_id);
       return admEdited;
     } catch (error) {
