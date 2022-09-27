@@ -14,7 +14,7 @@ class BookControllers {
   }
 
   async getForId(req: Request, res: Response) {
-    const id = req.params.id as string;
+    const id = req.params._id as string;
 
     const Book = await bookServices.getForId(id);
 
@@ -34,7 +34,7 @@ class BookControllers {
   }
 
   async updateBook(req: Request, res: Response) {
-    const id = req.params.id as string;
+    const id = req.params._id as string;
     const bookEdited: UpdateBookDto = req.body;
 
     try {
@@ -47,7 +47,7 @@ class BookControllers {
   }
 
   async deleteBook(req: Request, res: Response) {
-    const id = req.params.id as string;
+    const id = req.params._id as string;
 
     await bookServices.deleteBook(id);
 

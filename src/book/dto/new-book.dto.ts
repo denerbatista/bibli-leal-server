@@ -5,5 +5,5 @@ export interface NewBookDto {
   _ilustrator: String;
   _picture: String;
   _registrationDate: Date;
-  _historic: []
+  _historic?: []
 }
