@@ -29,7 +29,7 @@ class AdmControllers {
 
       res.status(201).send(adm);
     } catch (error) {
-      res.status(400).send("Email já cadastrado");
+      res.status(400).send(error);
     }
   }
 

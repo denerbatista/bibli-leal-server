@@ -1,6 +1,3 @@
-// Importação do model para acessar os usuarios
-import "./auth.model";
-// Importação das bibliotecas de segurança
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
 import AdmsModel from "../adm/adm.model";
@@ -8,6 +5,15 @@ import { Adm } from "../adm/entities/adm.entity";
 import { DatosLoginDto } from "./dto/datosLogin.dto";
 
 class AuthServices {
+  async verificToken(token: string) {
+    try {
+      jwt.verify(token, "chave_secreta");
+      return true;
+    } catch (error) {
+      return false;
+    }
+  }
+
   async login(datos: DatosLoginDto) {
     const adm: Adm | null = await AdmsModel.findOne({ _email: datos._email });
 
