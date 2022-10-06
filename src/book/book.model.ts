@@ -5,11 +5,13 @@ const BookSchema = new Schema<Book>(
   {
     _register: { type: Number, required: true },
     _title: { type: String, required: true },
+    _author: { type: String, required: true },
     _publishingCompany: { type: String, required: true },
     _ilustrator: { type: String, required: true },
     _picture: { type: String, required: false },
     _registrationDate: { type: Date, required: true },
     _status: { type: String, required: true },
+    _genre: { type: String, required: true },
     _historic: [
       {
         _user: {
