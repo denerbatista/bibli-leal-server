@@ -5,6 +5,7 @@ import logger from "morgan";
 import { admRouter } from "./adm/adm.router";
 import { bookRouter } from "./book/book.router";
 import authRouter from "./auth/auth.router";
+import { genreRouter } from "./genre/genre.router";
 
 // * Cria o app
 export const app: Express = express();
@@ -18,3 +19,4 @@ app.use(logger("dev"));
 app.use("/adm", admRouter);
 app.use("/book", bookRouter);
 app.use("/auth", authRouter);
+app.use("/genre", genreRouter);
